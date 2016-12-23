@@ -2,15 +2,16 @@ language: node_js
 script:
   - npm run test -- --env ci
 
-cache:
-  directories:
-    - travis_phantomjs
-
 before_install:
-  # Upgrade PhantomJS to v2.1.1.
-  - "export PHANTOMJS_VERSION=2.1.1"
-  - "export PATH=$PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/bin:$PATH"
-  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then rm -rf $PWD/travis_phantomjs; mkdir -p $PWD/travis_phantomjs; fi"
-  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then wget https://github.com/Medium/phantomjs/releases/download/v$PHANTOMJS_VERSION/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -O $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2; fi"
-  - "if [ $(phantomjs --version) != $PHANTOMJS_VERSION ]; then tar -xvf $PWD/travis_phantomjs/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C $PWD/travis_phantomjs; fi"
-  - "phantomjs --version"
+  # fire up xvfb on port :99.0
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  # set the xvfb screen size to 1280x1024x16
+  - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
+  # install meteor
+  - "curl https://install.meteor.com | /bin/sh"
+  # setup Meteor app
+  - "cd app; meteor reset; meteor -p 3000 &"
+  - "cd .."
+  # give Meteor some time to start
+  - "sleep 5"

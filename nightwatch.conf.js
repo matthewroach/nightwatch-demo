@@ -39,6 +39,12 @@ module.exports = {
 
 		"ci": {
 			"desiredCapabilities": {
+				"browserName": "firefox"
+			}
+		},
+
+		"phantom": {
+			"desiredCapabilities": {
 				"browserName": "phantomjs",
 				"phantomjs.binary.path": phantomjs.path,
 			}
