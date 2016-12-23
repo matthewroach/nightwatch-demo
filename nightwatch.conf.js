@@ -1,4 +1,5 @@
 var seleniumServer = require('selenium-server');
+var phantomjs = require('phantomjs-prebuilt')
 
 
 module.exports = {
@@ -38,8 +39,8 @@ module.exports = {
 
 		"ci": {
 			"desiredCapabilities": {
-				"browserName": "firefox",
-				"marionette": true
+				"browserName": "phantomjs",
+				"phantomjs.binary.path": phantomjs.path,
 			}
 		}
 	}

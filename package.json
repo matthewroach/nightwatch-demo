@@ -20,6 +20,7 @@
   "homepage": "https://github.com/matthewroach/nightwatch-demo#readme",
   "devDependencies": {
     "nightwatch": "^0.9.11",
+    "phantomjs-prebuilt": "^2.1.14",
     "selenium-server": "^3.0.1"
   }
 }
