@@ -1,7 +1,6 @@
 var seleniumServer = require('selenium-server');
 var phantomjs = require('phantomjs-prebuilt')
 
-
 module.exports = {
 	"src_folders": ["tests"],
 	"output_folder": "reports",
@@ -13,7 +12,7 @@ module.exports = {
 	"selenium": {
 		"start_process": true,
 		"server_path": seleniumServer.path,
-		"host": '127.0.0.1',
+		"host": "127.0.0.1",
 		"port": 4444,
 		"cli_args": {
 			"webdriver.chrome.driver": "./bin/drivers/chromedriver",
@@ -24,16 +23,16 @@ module.exports = {
 	"test_settings": {
 		"default": {
 			"launch_url": "localhost",
-			"selenium_host": "127.0.0.1",
+			"selenium_host": "localhost",
 			"selenium_port": 4444,
+			"pathname": "/wd/hub",
 			"silent": true,
 			"screenshots": {
 				"enabled": false,
 				"path": ""
 			},
 			"desiredCapabilities": {
-				"browserName": "chrome",
-				"marionette": true
+				"browserName": "chrome"
 			}
 		},
 
