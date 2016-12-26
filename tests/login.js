@@ -1,7 +1,7 @@
 
 module.exports = {
-  'Login Page Initial Render': function( _browser ) {
-    _browser
+  'Login Page Initial Render': function(browser) {
+    browser
       .url('http://dev.matthewroach.me/login/')
       .waitForElementVisible( 'body', 1000 )
       .verify.visible('#username')
@@ -12,8 +12,8 @@ module.exports = {
 
 
 
-  'Try to login with no username or password': function( _browser ) {
-    _browser
+  'Try to login with no username or password': function(browser) {
+    browser
       .click('input[type=submit]')
       .pause(1000)
       .verify.visible('.error')
@@ -24,8 +24,8 @@ module.exports = {
 
 
 
-  'Try to login with a username and no password': function( _browser ) {
-    _browser
+  'Try to login with a username and no password': function(browser) {
+    browser
       .setValue( '#username', 'abc' )
       .click('input[type=submit]')
       .pause(1000)
@@ -37,8 +37,8 @@ module.exports = {
 
 
 
-  'Try to login with a password and no username': function( _browser ) {
-    _browser
+  'Try to login with a password and no username': function(browser) {
+    browser
       .setValue( '#password', 'test' )
       .click('input[type=submit]')
       .pause(1000)
@@ -50,8 +50,8 @@ module.exports = {
 
 
 
-  'Enter wrong username and password': function( _browser ) {
-    _browser
+  'Enter wrong username and password': function(browser) {
+    browser
       .setValue( '#username', 'abc' )
       .setValue( '#password', '123' )
       .click('input[type=submit]')
@@ -64,4 +64,4 @@ module.exports = {
   }
 
 
-}
+};
