@@ -1,0 +1,26 @@
+{
+  "name": "nightwatch-demo",
+  "version": "1.0.0",
+  "description": "Simple demo's of nightwatch UI testing",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/nightwatch/bin/nightwatch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewroach/nightwatch-demo.git"
+  },
+  "author": "Matthew Roach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewroach/nightwatch-demo/issues"
+  },
+  "homepage": "https://github.com/matthewroach/nightwatch-demo#readme",
+  "devDependencies": {
+    "nightwatch": "^0.9.11",
+    "phantomjs-prebuilt": "^2.1.14",
+    "selenium-server": "^2.53.0"
+  }
+}
