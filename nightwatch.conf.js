@@ -22,7 +22,7 @@ module.exports = {
 
 	"test_settings": {
 		"default": {
-			"launch_url": "localhost",
+			"launch_url": "http://dev.matthewroach.me/login/",
 			"selenium_host": "localhost",
 			"selenium_port": 4444,
 			"pathname": "/wd/hub",
