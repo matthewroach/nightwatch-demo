@@ -8,6 +8,7 @@ module.exports = {
       .verify.visible('#password')
       .verify.value( 'input[type=submit]', 'Log In' )
       .verify.elementNotPresent('.error')
+      .end()
   },
 
 
@@ -20,6 +21,7 @@ module.exports = {
       .verify.containsText( '.error', 'Username and Password is empty' )
       .verify.valueContains( '#username', '' )
       .verify.valueContains( '#password', '' )
+      .end()
   },
 
 
@@ -33,6 +35,7 @@ module.exports = {
       .verify.containsText( '.error', 'Password is empty' )
       .verify.valueContains( '#username', '' )
       .verify.valueContains( '#password', '' )
+      .end()
   },
 
 
@@ -46,6 +49,7 @@ module.exports = {
       .verify.containsText( '.error', 'Username is empty' )
       .verify.valueContains( '#username', '' )
       .verify.valueContains( '#password', '' )
+      .end()
   },
 
 
