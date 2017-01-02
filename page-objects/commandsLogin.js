@@ -1,10 +1,10 @@
 var loginCommands = {
 	validateForm: function() {
 		return this.waitForElementVisible('body', 1000)
-      .verify.visible('@username')
-      .verify.visible('@password')
-      .verify.value('@submit', 'Log In')
-      .verify.elementNotPresent('@error')
+			.verify.visible('@username')
+			.verify.visible('@password')
+			.verify.value('@submit', 'Log In')
+			.verify.elementNotPresent('@error')
 	},
 	fillInForm: function(username, password) {
 		return this.waitForElementVisible('body', 1000)
