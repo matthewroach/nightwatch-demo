@@ -3,7 +3,7 @@ node_js:
   - "8"
 
 script:
-  - npm run test -- --env ci
+  - npm run test -- --env phantom
 
 before_install:
   # fire up xvfb on port :99.0
